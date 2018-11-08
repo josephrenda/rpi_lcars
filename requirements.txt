@@ -1,4 +1,5 @@
 pygame>=1.9.1
 pillow
 psutil
-
+rpi_blacklight
+RPi.GPIO
