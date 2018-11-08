@@ -13,14 +13,13 @@ from ui.widgets.screen import LcarsScreen
 from ui.widgets.sprite import LcarsMoveToMouse
 from datasources.network import get_ip_address_string
 
-
 class ScreenMain(LcarsScreen):
     def setup(self, all_sprites):
         all_sprites.add(LcarsBackgroundImage("assets/lcars_screen_1b.png"),
                         layer=0)
 
         # panel text
-        all_sprites.add(LcarsText(colours.BLACK, (15, 44), "LCARS 1840"),
+        all_sprites.add(LcarsText(colours.BLACK, (15, 44), "LCARS 1840", 1, None, self.BrightnessHandler),
                         layer=1)
         all_sprites.add(LcarsText(colours.ORANGE, (0, 135), "HOME AUTOMATION", 2),
                         layer=1)
@@ -143,4 +142,8 @@ class ScreenMain(LcarsScreen):
     def AlarmOffHandler(self, item, event, clock):
         from datasources.alarmrelay import AlarmOff
         AlarmOff()
+
+    def BrightnessHandler(self, item, event, clock):
+        #from ui.brightness import BrightnessDialog
+        bl.gui()
 

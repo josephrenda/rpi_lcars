@@ -3,3 +3,4 @@ pillow
 psutil
 rpi_blacklight
 RPi.GPIO
+python-vlc
